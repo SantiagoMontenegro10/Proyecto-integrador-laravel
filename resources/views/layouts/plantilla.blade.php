@@ -53,9 +53,9 @@
         </div>
         <div class="element-slidebar-content">      
                  
-            <a href="">Todos</a>        
+            <a href="{{route('categoria.index')}}">Todos</a>        
            
-            <a href="">Agregar</a>           
+            <a href="{{route('categoria.create')}}">Agregar</a>           
         </div>
     </div>
     <!-- Productos -->
