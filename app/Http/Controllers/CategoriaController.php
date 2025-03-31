@@ -55,25 +55,47 @@ class CategoriaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Categoria $categoria)
+    public function show($id)
     {
         //
+        $categoria=Categoria::findOrFail($id);
+        return view('categoria.show', compact('categoria')); 
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Categoria $categoria)
+    public function edit($id)
     {
         //
+        $categoria=Categoria::findOrFail($id);
+        return view("categoria.edit",["categoria"=>$categoria]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Categoria $categoria)
+    public function update(Request $request, $id)
     {
         //
+         // Validar los datos del formulario
+         $validatedData = $request->validate([
+            'nombre' => 'required|max:255',
+            'descripcion' => 'nullable',
+            'status' => 'required|boolean',
+        ]);
+
+        //buscar el registro que se va actualizar
+
+        $categoria=Categoria::findOrFail($id);
+        $categoria->nombre = $validatedData['nombre'];
+        $categoria->descripcion = $validatedData['descripcion'];
+        $categoria->status = $validatedData['status'];
+
+        // Guardar la categoría en la base de datos
+        $categoria->save();    
+        // Redirigir a la lista de categorías con un mensaje de éxito
+        return redirect()->route('categoria.index');
     }
 
     /**

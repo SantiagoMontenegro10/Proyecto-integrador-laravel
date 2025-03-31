@@ -56,11 +56,12 @@ body{
     display: flex;
     width: 100%;
     padding: 10px;
+    margin-top:5px;
     padding-left: 30px;
     align-items: center;
     cursor: pointer;
 }
-.element-slidebar img{
+.element-slidebar-btn img{
     width: 20px;
     height: 20px;
     margin-right: 10px;
@@ -106,19 +107,13 @@ body{
 .element-slidebar-content{
     display: none;
 }
-.element-slidebar-content a:hover, .element-slidebar-content form:hover{
-    background-color:var(--color-texto-hover);
-    color: var(--color-main);
-    border-radius: 0 20px 20px 0;
-}
-.element-slidebar:hover{
+.element-slidebar-content a:hover, .element-slidebar-content form:hover,.element-slidebar-btn:hover {
     color: blueviolet;
     background-color: rgba(45, 20, 44, 0.055);
-    border-radius: 10px;
-   
-   
+    border-radius: 0 20px 20px 0;
 }
-.element-slidebar-btn:hover{
+
+.element-slidebar-btn.active{
    background-color:var(--color-texto-hover);
    color: var(--color-main);
    border-radius: 0 20px 20px 0;
@@ -166,8 +161,19 @@ body{
     padding: 10px;
     font-size: 30px;
 }
-.header h2{
+.titulo-nav {
     font-size: 20px;
+}
+.titulo-nav a{
+  padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.titulo-nav a:hover{
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    background-color:var(--color-texto-hover);
 }
 .menu-hamburger{
     display: none;
@@ -185,17 +191,7 @@ body{
     padding-bottom: 10px;
 
 }
-.card-show{
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    max-width: 500px;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 10px;
-    text-align:left;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4)
-}
+
 
 .card-show img{
     width: 100%;
@@ -208,10 +204,21 @@ body{
     padding: 20px;
     border-radius: 10px;
     text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  
+    
 }
-
-
-
+.card-show{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    text-align:left;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2)
+}
 
 .cabecera{
     display: flex;
@@ -219,7 +226,7 @@ body{
     justify-content: space-between;
     border-bottom: 1px solid rgb(168, 167, 167);
     height: 80%;
-    margin-bottom: 10px;
+   
 }
 .cabecera img{
     width: 50px;

@@ -45,69 +45,45 @@
         </div>
     </div>
      <!-- Categorias -->
-    
-     <div class="element-slidebar">
+         
         <div class="element-slidebar-btn">
          <span><img  src="{{asset('img/category.png')}}" alt="Product"></span>
-         <p>Categorias</p>
+         <a href="{{route('categoria.index')}}">Categorias</a>
         </div>
-        <div class="element-slidebar-content">      
-                 
-            <a href="{{route('categoria.index')}}">Todos</a>        
-           
-            <a href="{{route('categoria.create')}}">Agregar</a>           
-        </div>
-    </div>
+       
+  
     <!-- Productos -->
     
-    <div class="element-slidebar">
+    
         <div class="element-slidebar-btn">
          <span><img  src="{{asset('img/rokrt.png')}}" alt="Product"></span>
-         <p>Productos</p>
+         <a href="{{route('categoria.index')}}">Productos</a>
+       
         </div>
-        <div class="element-slidebar-content">
-            <a href="">Todos</a>
-            <a href="">Agregar</a>
-
-        </div>
-    </div>
+        
      
     <!-- Provedores -->
-    <div class="element-slidebar">
+   
         <div class="element-slidebar-btn">
-         <span><img  src="{{asset('img/provedores.png')}}" alt="Provedor"></span>
-         <p>Provedores</p>
+         <span><img  src="{{asset('img/provedores.png')}}" alt="Provedor"></span>      
+         <a href="{{route('categoria.index')}}">Provedores</a>
         </div>
-        <div class="element-slidebar-content">
-            <a href="">Todos</a>
-            <a href="">Agregar</a>
-
-        </div>
-    </div>
+       
+    
     <!-- Compras -->
-    <div class="element-slidebar">
+
         <div class="element-slidebar-btn">
          <span><img  src="{{asset('img/compras.png')}}" alt="Product"></span>
-         <p>Compras</p>
+         <a href="{{route('categoria.index')}}">Compras</a>         
         </div>
-        <div class="element-slidebar-content">
-            <a href="">Todos</a>
-            <a href="">Agregar</a>
-
-        </div>
-    </div>
+       
         <!-- Ventas -->
-        <div class="element-slidebar">
+        
             <div class="element-slidebar-btn">
              <span><img  src="{{asset('img/ventas.png')}}" alt="ventas"></span>
-             <p>Ventas</p>
+             <a href="{{route('categoria.index')}}">Ventas</a>
             </div>
-            <div class="element-slidebar-content">
-                <a href="">Todos</a>
-                <a href="">Nueva venta</a>
-    
-            </div>
-        </div>
+           
     </div>
    </aside>
 
@@ -115,7 +91,8 @@
    <main class="main">
     <!-- header -->
     <header class="header">
-        <h2>@yield('titulomain')</h2>      
+        <div class="titulo-nav">@yield('titulomain')</div>  
+
         <button id="menu-toggle" class="menu-hamburger">☰</button>
     </header>
     {{-- aqui se coloca todos los elmentos cambiantes --}}

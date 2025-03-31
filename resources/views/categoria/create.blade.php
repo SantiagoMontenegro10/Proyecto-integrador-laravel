@@ -1,7 +1,8 @@
 @extends('layouts.plantilla')
 
 @section('titulomain')
-Categorias/create
+<a href="{{ route('categoria.index') }}">Categorías</a> / 
+<span>Agregar </span>
 @endsection
 
 @section('contenido')

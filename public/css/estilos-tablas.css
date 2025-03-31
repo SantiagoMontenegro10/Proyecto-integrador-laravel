@@ -34,10 +34,16 @@ th, td {
     text-align: left;
     border-bottom: 1px solid #ddd;
     width: auto;
+    max-width: 500px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
 }
-td {
-    white-space: nowrap; 
+td:last-child,th:last-child{
+    white-space: nowrap;
+    min-width: 160px;
 }
+
 .tabla-productos td:nth-child(3) img {
     width: 50px;
     height: auto;    

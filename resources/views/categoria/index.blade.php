@@ -1,7 +1,7 @@
 @extends('layouts.plantilla')
 
 @section('titulomain')
-Categorias/index
+Categorias
 @endsection
 
 @section('contenido')

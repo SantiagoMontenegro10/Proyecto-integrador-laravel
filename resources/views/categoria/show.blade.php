@@ -1,6 +1,20 @@
 @extends('layouts.plantilla')
+@section('titulomain')
+<a href="{{ route('categoria.index') }}">Categorías</a> / 
+<span>Categoría {{ $categoria->nombre }}</span>
+@endsection
 @section('contenido')
 
-<h1> aqui va una tarjeta con todal ainfor macion de cada categoria</h1>
+<section class="container-cards">
+
+    <div class="card-show">
+        <div class="cabecera">            
+             <h2>{{$categoria->nombre}}</h2>                      
+               
+        </div>
+        <p> {{$categoria->descripcion}}</p>
+    </div>
+
+</section>
 
 @endsection
