@@ -12,4 +12,10 @@ class Categoria extends Model
     //desactivo marcas de tiempo
     public $timestamps=false;
 
+    //relacion con productos uno a muchos
+
+    public function productos(){
+        return this->hasMany(Producto::class,'id');
+    }
+
 }

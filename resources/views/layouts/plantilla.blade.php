@@ -57,7 +57,7 @@
     
         <div class="element-slidebar-btn">
          <span><img  src="{{asset('img/rokrt.png')}}" alt="Product"></span>
-         <a href="{{route('categoria.index')}}">Productos</a>
+         <a href="{{route('producto.index')}}">Productos</a>
        
         </div>
         
