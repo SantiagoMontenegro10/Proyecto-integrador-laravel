@@ -11,11 +11,11 @@ Categorias
 
     <nav class="nav-botones">
         <ul class="nav-menu">
-
-         <li class="nav-item">
+        @can ('categoria.create')
+            <li class="nav-item">
                 <a href="{{route('categoria.create')}}" class="nav-link btn-agregar">Agregar Categoria</a>
             </li>
-            
+        @endcan    
         </ul>
     </nav>
     
@@ -41,11 +41,15 @@ Categorias
                 <a href="{{route('categoria.show',[$categoria->id])}}">
                    <img src="img/view.png" alt=""> 
                 </a>
-                <a href="{{route('categoria.edit',[$categoria->id])}}">
-                   <img src="img/edit.png" alt="">
-                </a>
 
-                <form action="{{route('categoria.destroy',[$categoria->id])}}" method="POST" onsubmit="return confimarEliminacion()">
+                @can ('categoria.update')
+                   <a href="{{route('categoria.edit',[$categoria->id])}}">
+                   <img src="img/edit.png" alt="">
+                   </a>
+                @endcan  
+
+                @can ('categoria.destroy')
+                    <form action="{{route('categoria.destroy',[$categoria->id])}}" method="POST" onsubmit="return confimarEliminacion()">
 
                     {{-- permite gemrar el token para enviar por post --}}
                     @csrf
@@ -53,8 +57,8 @@ Categorias
                     @method('DELETE')
                     <input type="image"src="img/delete.png"></input>
 
-                 </form>
-               
+                     </form>
+                 @endcan  
                  <script>
                     function confimarEliminacion() {
                         return confirm('¿Seguro deseas eliminar?'); // Muestra el mensaje de confirmación
