@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\PdfController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -22,6 +24,9 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('/categoria',CategoriaController::class);
     Route::resource('/producto',ProductoController::class);
+
+    //pdf
+    Route::get('/pdfproductos', [PdfController::class, 'pdfProductos'])->name('pdf.productos');
 });
 
 require __DIR__.'/auth.php';

@@ -13,6 +13,12 @@
              <li class="nav-item">
                  <a href="{{route('producto.create')}}" class="nav-link btn-agregar">Agregar Producto</a>
              </li>
+             
+             <li class="nav-item">
+                <a href="{{route('pdf.productos')}}"  target="_blank" class="nav-link btn-generar-pdf">Generar pdf</a>
+                
+            </li>
+
          </ul>
      </nav>
    
