@@ -1,80 +1,94 @@
-/* Estilos básicos para la tabla en PDF */
-*{
+/* Estilo VelvettPink para PDF */
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
 }
-body{
-    height: 100vh;    
+
+body {
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 30px;
-
-    
+    background-color: #fffafc;
 }
 
 .pdf .container-tabla {
     max-width: 800px;
     margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #f2c6f2;
+    background-color: #fff0f5;
 }
 
 .pdf h2.titulo-tabla {
     text-align: center;
     margin-bottom: 20px;
+    color: #7a007a;
+    font-size: 24px;
+    border-bottom: 2px solid #e287e2;
+    padding-bottom: 10px;
 }
 
 .pdf table {
     width: 100%;
     border-collapse: collapse;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .pdf th, .pdf td {
-    border: 1px solid #ddd;
-    padding: 8px;
+    border: 1px solid #eab0ea;
+    padding: 10px 12px;
     text-align: left;
+    font-size: 14px;
 }
 
 .pdf th {
     background-color: #e287e2;
+    color: white;
+    font-weight: bold;
 }
+
+.pdf tr:nth-child(even) {
+    background-color: #fbe4fb;
+}
+
 .header {
     display: flex;
-    align-items: center; /* Alinea verticalmente en el centro */
-    justify-content: space-between; /* Distribuye el espacio entre los extremos */
-    margin-bottom: 20px;
-    margin-top: 30px;
-    border: 1px solid #ccc;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px 0 20px 0;
+    border: 2px solid #f2c6f2;
+    border-radius: 8px;
+    padding: 10px 20px;
+    background-color: #fff5fa;
 }
 
 .header-left {
-    display: inline-block;
     text-align: left;
-    
-   
 }
 
 .header-left h1 {
-
-    margin: 0; /* Elimina margen superior e inferior */
-    margin-right: 250px; /* Espacio entre el título y el logo */
-    margin-left: 20px;
-    padding-bottom: 20px;
-   
+    margin: 0;
+    margin-left: 10px;
+    color: #7a007a;
+    font-size: 22px;
 }
 
 .header-right {
-    display: inline-block;
-    margin-top: 30px;
-    text-align: top;
-   
+    text-align: right;
 }
 
 .header img {
-    width: 60px; /* Ajusta el tamaño del logo según sea necesario */
-    margin-right: 20px; /* Espacio entre el logo y el nombre */
-    padding-right: 10px;
+    width: 70px;
+    margin-left: 20px;
+    border-radius: 8px;
 }
 
 .footer {
@@ -83,6 +97,8 @@ body{
     width: 100%;
     text-align: center;
     font-size: 12px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    color: #777;
+    padding: 10px;
+    border-top: 1px solid #eab0ea;
+    background-color: #fff5fa;
 }

@@ -23,7 +23,7 @@
    <aside class="slidebar" id="slidebar">
    
     <a href="" class="logo">
-        <img src="{{asset('img/cangrejo.png')}}" alt="Logo" class="logo-img">
+        <img src="{{asset('img/logo.png')}}" alt="Logo" class="logo-img">
         <p class="logo-text">Tienda</p>
       </a>
     

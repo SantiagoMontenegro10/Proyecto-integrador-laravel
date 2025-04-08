@@ -1,22 +1,24 @@
-/* Tarjeta con clase 'card formulario' */
-:root{
-    --color-slidebar:rgb(226, 231, 235);    
-    --color-main:rgb(244, 247, 250);
-    --color-texto:rgba(25, 22, 22, 0.836);
-    --color-texto-hover:  rgba(129, 67, 191, 0.8);
-
-    
-
+:root {
+    --color-slidebar: #fdf1f7;    
+    --color-main: #fff0f5;
+    --color-texto: #3a2a32;
+    --color-texto-hover: #d96fa7;
+    --color-boton: #e89ec3;
+    --color-boton-hover: #d96fa7;
+    --color-borde: #f0c9dc;
+    --color-fondo: #fff9fc;
+    --sombra-suave: rgba(234, 164, 199, 0.2);
 }
 
 .card.formulario {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
+    background-color: var(--color-fondo);
+    border: 1px solid var(--color-borde);
+    border-radius: 12px;
+    padding: 25px;
     max-width: 500px;
     width: 100%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px var(--sombra-suave);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Título de la tarjeta */
@@ -24,26 +26,34 @@
     margin-top: 0;
     margin-bottom: 20px;
     text-align: center;
+    color: var(--color-texto);
+    font-size: 24px;
+    font-weight: 600;
 }
 
 /* Estilos del formulario */
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: var(--color-texto);
 }
 
 .form-group input,
 .form-group textarea,
 .form-group select {
     width: 100%;
-    padding: 8px;
-    border: solid 1px black;
+    padding: 10px;
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
     box-sizing: border-box;
+    background-color: #fff;
+    font-size: 15px;
+    color: var(--color-texto);
 }
 
 .form-group textarea {
@@ -53,33 +63,34 @@
 /* Estilo del botón */
 .form-group button {
     width: 100%;
-    padding: 10px;
-    background-color:rgba(60, 7, 72, 0.842); /* Color verde */
+    padding: 12px;
+    background-color: var(--color-boton);
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
 .form-group button:hover {
-    background-color:var(--color-texto-hover);
+    background-color: var(--color-boton-hover);
 }
 
 /* Responsividad */
 @media (max-width: 600px) {
     .card.formulario {
-        padding: 15px;
+        padding: 20px;
     }
 
     .form-group input[type="text"],
     .form-group textarea,
     .form-group select {
-        padding: 6px;
+        padding: 8px;
     }
 
     .form-group button {
-        padding: 8px;
+        padding: 10px;
         font-size: 14px;
     }
 }
