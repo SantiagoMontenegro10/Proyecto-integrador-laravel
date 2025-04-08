@@ -23,14 +23,14 @@
    <aside class="slidebar" id="slidebar">
    
     <a href="" class="logo">
-        <img src="{{asset('img/logo.png')}}" alt="Logo" class="logo-img">
-        <p class="logo-text">Tienda</p>
+        <img src="{{asset('img/logo.jpg')}}" alt="Logo" class="logo-img">
+        <p class="logo-text">Store</p>
       </a>
     
     <!-- PERFIL -->
     <div class="element-slidebar">
         <div class="element-slidebar-btn profile">
-         <span><img src="{{asset('img/face3.png')}}" alt="avatar"></span>
+         <span><img src="{{asset('img/face2.jpg')}}" alt="avatar"></span>
          <p>{{ Auth::user()->name }}</p>
         </div>
         <div class="element-slidebar-content">

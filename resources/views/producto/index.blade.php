@@ -4,7 +4,7 @@
 @endsection
 @section('contenido')
 
-<section class="container-tabla">
+<section class="fondo-con-imagen" class="container-tabla">
     <h2 class="titulo-tabla"> Listado de productos</h2>
     
   <nav class="nav-botones">

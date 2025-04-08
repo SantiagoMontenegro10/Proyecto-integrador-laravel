@@ -7,6 +7,8 @@
 
 @section('contenido')
 
+
+
 <div class="container-formulario">
     <div class="card formulario">
         <h2>Crear Nuevo Producto</h2>
