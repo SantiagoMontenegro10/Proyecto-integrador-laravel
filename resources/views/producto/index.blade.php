@@ -8,6 +8,28 @@
     <h2 class="titulo-tabla"> Listado de productos</h2>
     
   <nav class="nav-botones">
+
+    <form action="{{ route('producto.index') }}" method="GET" class="form-filtros">
+        <select name="categoria" class="filtro-select">
+            <option value=""> Categoría </option>
+            @foreach($categorias as $categoria)
+                <option value="{{ $categoria->id }}" {{ request('categoria') == $categoria->id ? 'selected' : '' }}>
+                    {{ $categoria->nombre }}
+                </option>
+            @endforeach
+        </select>    
+        <select name="stock" class="filtro-select">
+            <option value=""> Stock </option>
+            <option value="con" {{ request('stock') == 'con' ? 'selected' : '' }}>Con stock</option>
+            <option value="sin" {{ request('stock') == 'sin' ? 'selected' : '' }}>Sin stock</option>
+        </select>
+    
+        <input type="text" name="buscar" placeholder="Buscar producto..." value="{{ request('buscar') }}" class="filtro-input">
+    
+        <button type="submit" class="nav-link btn-filtrar">Filtrar</button>
+    </form>
+
+
          <ul class="nav-menu">
             
              <li class="nav-item">
@@ -15,7 +37,7 @@
              </li>
              
              <li class="nav-item">
-                <a href="{{route('pdf.productos')}}"  target="_blank" class="nav-link btn-generar-pdf">Generar pdf</a>
+                <a href="{{route('pdf.productos',request()->query())}}"  target="_blank" class="nav-link btn-generar-pdf">Generar pdf</a>
                 
             </li>
 
@@ -85,7 +107,12 @@
            
         </tbody>
     </table>
- 
+    <!-- Paginar los resultados -->
+    <div class="nav-botones">
+        <!-- elegir una platilla de paginacion de vendor/pagination -->
+          {{ $productos->links('vendor.pagination.default') }} 
+        </div>
+     
      
  </section>
 

@@ -10,11 +10,34 @@ class ProductoController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
-        $productos= Producto::orderBy('id','DESC')->paginate(5);
-        return view('producto.index', compact('productos'));
+         // Traer todas las categorías para el filtro
+         $categorias = Categoria::all();
+        // Consulta base
+         $query = Producto::query();
+
+        // Filtro por categoría
+       if ($request->filled('categoria')) {
+          $query->where('id_categoria', $request->categoria);
+       }
+
+       // Filtro por stock
+       if ($request->stock == 'con') {
+        $query->where('stock', '>', 0);
+        } elseif ($request->stock == 'sin') {
+        $query->where('stock', '<=', 0);
+        }
+
+         // Filtro por nombre o búsqueda
+         if ($request->filled('buscar')) {
+         $query->where('nombre', 'like', '%' . $request->buscar . '%');
+         }
+         // Ordenar y paginar
+         $productos = $query->orderBy('id', 'DESC')->paginate(4);
+         
+         // Retornar vista con filtros
+         return view('producto.index', compact('productos', 'categorias'));
     }
 
     /**
